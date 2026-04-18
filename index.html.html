@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Шиномонтаж 404 — Днепр</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e94560;--dark:#0d0d1a;--dark2:#16213e;--dark3:#1a1a2e;--card:#1e1e32;--border:rgba(255,255,255,0.08);--muted:#8888aa;--green:#4caf50}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--dark);color:#fff;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,26,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:3px}
+.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:#c73652}
+@media(max-width:768px){.nav-links{display:none}}
+
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:6rem 2rem 4rem}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,#1a1a2e 0%,#0d0d1a 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(233,69,96,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(233,69,96,.05) 1px,transparent 1px);background-size:60px 60px}
+.hero-content{position:relative;z-index:1}
+.hero-badge{display:inline-block;background:rgba(233,69,96,.15);border:1px solid rgba(233,69,96,.3);color:var(--red);font-size:12px;font-weight:600;letter-spacing:2px;padding:6px 16px;border-radius:20px;margin-bottom:2rem;text-transform:uppercase}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,15vw,12rem);line-height:.9;letter-spacing:4px}
+.hero h1 span{color:var(--red)}
+.hero-sub{font-size:clamp(.9rem,2vw,1.2rem);color:var(--muted);margin:1.5rem 0 2.5rem;letter-spacing:1px}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--red);color:#fff;padding:14px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .2s}
+.btn-primary:hover{background:#c73652;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:#fff;padding:14px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid var(--border);cursor:pointer;transition:all .2s}
+.btn-outline:hover{border-color:rgba(255,255,255,.3)}
+.hours-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(76,175,80,.1);border:1px solid rgba(76,175,80,.2);color:var(--green);padding:6px 16px;border-radius:20px;font-size:13px;margin-top:1.5rem}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+
+section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:11px;font-weight:600;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:.75rem}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);letter-spacing:2px;margin-bottom:3rem}
+.section-title span{color:var(--red)}
+
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.srv-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;transition:all .2s;position:relative;overflow:hidden}
+.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.srv-card:hover{border-color:rgba(233,69,96,.3);transform:translateY(-2px)}
+.srv-card:hover::before{transform:scaleX(1)}
+.srv-icon{font-size:28px;margin-bottom:1rem}
+.srv-card h3{font-size:17px;font-weight:600;margin-bottom:8px}
+.srv-card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:1.25rem}
+.srv-price{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--red);letter-spacing:1px}
+.srv-price span{font-family:'Manrope',sans-serif;font-size:13px;color:var(--muted);font-weight:400}
+
+.price-wrap{background:var(--dark3);border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.price-tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--border)}
+.price-tab{flex:1;min-width:120px;padding:13px 8px;text-align:center;cursor:pointer;font-size:13px;font-weight:600;color:var(--muted);transition:all .2s;background:none;border:none;font-family:'Manrope',sans-serif;border-bottom:2px solid transparent}
+.price-tab.active{color:#fff;background:rgba(233,69,96,.1);border-bottom:2px solid var(--red)}
+.price-tab:hover:not(.active){color:#fff}
+.price-content{display:none}
+.price-content.active{display:block}
+table{width:100%;border-collapse:collapse}
+th{padding:12px 16px;text-align:left;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border)}
+td{padding:13px 16px;font-size:14px;border-bottom:1px solid var(--border);color:#ddd}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+.td-price{color:var(--red);font-weight:600;font-size:15px;white-space:nowrap}
+.price-note{padding:14px 16px;font-size:12px;color:var(--muted);border-top:1px solid var(--border)}
+
+.booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:700px){.booking-wrap{grid-template-columns:1fr}}
+.book-panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem}
+.book-panel h3{font-size:18px;font-weight:600;margin-bottom:1.5rem}
+.form-group{margin-bottom:1rem}
+.form-group label{font-size:12px;font-weight:600;letter-spacing:.5px;color:var(--muted);display:block;margin-bottom:6px}
+.form-group input,.form-group select{width:100%;padding:11px 14px;background:var(--dark2);border:1px solid var(--border);border-radius:8px;color:#fff;font-size:14px;font-family:'Manrope',sans-serif;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:rgba(233,69,96,.5)}
+.form-group select option{background:var(--dark3)}
+.btn-book{width:100%;padding:13px;background:var(--red);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;margin-top:8px;font-family:'Manrope',sans-serif;transition:background .2s}
+.btn-book:hover{background:#c73652}
+.success-msg{background:rgba(76,175,80,.1);border:1px solid rgba(76,175,80,.3);color:var(--green);border-radius:8px;padding:12px 16px;font-size:13px;margin-top:12px;display:none;text-align:center}
+.date-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.date-nav button{background:var(--dark2);border:1px solid var(--border);color:#fff;width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:18px}
+.date-nav button:hover{border-color:rgba(233,69,96,.5)}
+.date-nav span{font-weight:600;font-size:14px}
+.time-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.time-slot{padding:10px 6px;border-radius:8px;font-size:13px;font-weight:500;text-align:center;border:1px solid var(--border);cursor:pointer;transition:all .15s}
+.time-slot.free{background:rgba(76,175,80,.08);color:#81c784;border-color:rgba(76,175,80,.2)}
+.time-slot.free:hover{background:rgba(76,175,80,.2)}
+.time-slot.busy{background:rgba(233,69,96,.05);color:#e57373;border-color:rgba(233,69,96,.15);cursor:not-allowed;opacity:.6}
+.time-slot.selected{background:var(--red);color:#fff;border-color:var(--red)}
+.legend{display:flex;gap:16px;margin-top:1rem;font-size:12px;color:var(--muted)}
+.leg{display:flex;align-items:center;gap:6px}
+.leg-dot{width:10px;height:10px;border-radius:3px}
+
+.contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:all .2s}
+.contact-card:hover{border-color:rgba(233,69,96,.3);transform:translateY(-2px)}
+.contact-icon{font-size:32px;margin-bottom:1rem}
+.contact-card h4{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.contact-card p{font-size:16px;font-weight:600}
+.contact-card a{color:#fff;text-decoration:none}
+.contact-card a:hover{color:var(--red)}
+
+footer{text-align:center;padding:2rem;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+footer span{color:var(--red)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Шиномонтаж <span>404</span></div>
+  <div class="nav-links">
+    <a href="#services">Услуги</a>
+    <a href="#prices">Цены</a>
+    <a href="#booking">Запись</a>
+    <a href="#contacts">Контакты</a>
+  </div>
+  <a href="#booking" class="nav-cta">Записаться</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Шиномонтаж в Днепре</div>
+    <h1>ШИНО<span>404</span></h1>
+    <p class="hero-sub">Легковые · Внедорожники · Микроавтобусы · Газели</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-primary">Записаться онлайн</a>
+      <a href="#services" class="btn-outline">Наши услуги</a>
+    </div>
+    <div class="hours-badge"><div class="pulse"></div> Работаем 8:00 – 20:00, без выходных</div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="section-label">Что мы делаем</div>
+  <div class="section-title">НАШИ <span>УСЛУГИ</span></div>
+  <div class="services-grid">
+    <div class="srv-card">
+      <div class="srv-icon">🔧</div>
+      <h3>Замена шин</h3>
+      <p>Сезонная замена резины. Легковые R13–R21, джипы R15–R21, микроавтобусы и газели</p>
+      <div class="srv-price">от 180 грн <span>/ колесо</span></div>
+    </div>
+    <div class="srv-card">
+      <div class="srv-icon">⚖️</div>
+      <h3>Балансировка</h3>
+      <p>Компьютерная балансировка колёс. Устранение вибрации и биения руля</p>
+      <div class="srv-price">от 120 грн <span>/ колесо</span></div>
+    </div>
+    <div class="srv-card">
+      <div class="srv-icon">🔩</div>
+      <h3>Ремонт шин</h3>
+      <p>Ремонт прокола, боковых порезов. Установка заплаток и жгутов</p>
+      <div class="srv-price">от 150 грн <span>/ ремонт</span></div>
+    </div>
+    <div class="srv-card">
+      <div class="srv-icon">🛞</div>
+      <h3>Монтаж / Демонтаж</h3>
+      <p>Монтаж шины на диск и демонтаж. Работа с литыми и штампованными дисками</p>
+      <div class="srv-price">от 100 грн <span>/ колесо</span></div>
+    </div>
+    <div class="srv-card">
+      <div class="srv-icon">💨</div>
+      <h3>Подкачка шин</h3>
+      <p>Проверка и доведение давления до нормы. Азотная накачка по желанию</p>
+      <div class="srv-price">от 30 грн <span>/ шина</span></div>
+    </div>
+    <div class="srv-card">
+      <div class="srv-icon">🧰</div>
+      <h3>Хранение шин</h3>
+      <p>Сезонное хранение комплекта. Чистые и сухие условия</p>
+      <div class="srv-price">от 800 грн <span>/ сезон</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="section-label">Прозрачно и честно</div>
+  <div class="section-title">ПРАЙС <span>ЛИСТ</span></div>
+  <div class="price-wrap">
+    <div class="price-tabs">
+      <button class="price-tab active" onclick="showPrice('leg',this)">Легковые</button>
+      <button class="price-tab" onclick="showPrice('suv',this)">Джипы / Кроссоверы</button>
+      <button class="price-tab" onclick="showPrice('bus',this)">Микроавтобусы</button>
+      <button class="price-tab" onclick="showPrice('gaz',this)">Газель</button>
+    </div>
+
+    <div id="price-leg" class="price-content active">
+      <table>
+        <tr><th>Услуга</th><th>R13–R15</th><th>R16–R18</th><th>R19–R21</th></tr>
+        <tr><td>Монтаж шины</td><td class="td-price">100 грн</td><td class="td-price">130 грн</td><td class="td-price">160 грн</td></tr>
+        <tr><td>Демонтаж шины</td><td class="td-price">80 грн</td><td class="td-price">100 грн</td><td class="td-price">130 грн</td></tr>
+        <tr><td>Балансировка</td><td class="td-price">120 грн</td><td class="td-price">140 грн</td><td class="td-price">170 грн</td></tr>
+        <tr><td>Замена 4 колёс (монтаж + баланс)</td><td class="td-price">880 грн</td><td class="td-price">1 080 грн</td><td class="td-price">1 320 грн</td></tr>
+        <tr><td>Ремонт прокола (жгут)</td><td class="td-price">150 грн</td><td class="td-price">150 грн</td><td class="td-price">150 грн</td></tr>
+        <tr><td>Ремонт прокола (заплатка)</td><td class="td-price">200 грн</td><td class="td-price">200 грн</td><td class="td-price">220 грн</td></tr>
+        <tr><td>Ремонт боковины</td><td class="td-price">350 грн</td><td class="td-price">380 грн</td><td class="td-price">420 грн</td></tr>
+        <tr><td>Подкачка (1 шина)</td><td class="td-price">30 грн</td><td class="td-price">30 грн</td><td class="td-price">30 грн</td></tr>
+        <tr><td>Хранение (1 сезон)</td><td class="td-price">800 грн</td><td class="td-price">800 грн</td><td class="td-price">900 грн</td></tr>
+      </table>
+    </div>
+
+    <div id="price-suv" class="price-content">
+      <table>
+        <tr><th>Услуга</th><th>R15–R17</th><th>R18–R19</th><th>R20–R21</th></tr>
+        <tr><td>Монтаж шины</td><td class="td-price">150 грн</td><td class="td-price">180 грн</td><td class="td-price">210 грн</td></tr>
+        <tr><td>Демонтаж шины</td><td class="td-price">120 грн</td><td class="td-price">150 грн</td><td class="td-price">180 грн</td></tr>
+        <tr><td>Балансировка</td><td class="td-price">160 грн</td><td class="td-price">190 грн</td><td class="td-price">220 грн</td></tr>
+        <tr><td>Замена 4 колёс (монтаж + баланс)</td><td class="td-price">1 240 грн</td><td class="td-price">1 480 грн</td><td class="td-price">1 720 грн</td></tr>
+        <tr><td>Ремонт прокола (жгут)</td><td class="td-price">150 грн</td><td class="td-price">170 грн</td><td class="td-price">180 грн</td></tr>
+        <tr><td>Ремонт прокола (заплатка)</td><td class="td-price">230 грн</td><td class="td-price">250 грн</td><td class="td-price">270 грн</td></tr>
+        <tr><td>Ремонт боковины</td><td class="td-price">400 грн</td><td class="td-price">450 грн</td><td class="td-price">500 грн</td></tr>
+        <tr><td>Подкачка (1 шина)</td><td class="td-price">30 грн</td><td class="td-price">30 грн</td><td class="td-price">30 грн</td></tr>
+        <tr><td>Хранение (1 сезон)</td><td class="td-price">1 000 грн</td><td class="td-price">1 100 грн</td><td class="td-price">1 200 грн</td></tr>
+      </table>
+    </div>
+
+    <div id="price-bus" class="price-content">
+      <table>
+        <tr><th>Услуга</th><th>R15–R16</th><th>R17–R18</th><th>R19–R21</th></tr>
+        <tr><td>Монтаж шины</td><td class="td-price">200 грн</td><td class="td-price">230 грн</td><td class="td-price">260 грн</td></tr>
+        <tr><td>Демонтаж шины</td><td class="td-price">170 грн</td><td class="td-price">200 грн</td><td class="td-price">220 грн</td></tr>
+        <tr><td>Балансировка</td><td class="td-price">200 грн</td><td class="td-price">230 грн</td><td class="td-price">260 грн</td></tr>
+        <tr><td>Замена 4 колёс (монтаж + баланс)</td><td class="td-price">1 600 грн</td><td class="td-price">1 840 грн</td><td class="td-price">2 080 грн</td></tr>
+        <tr><td>Ремонт прокола (жгут)</td><td class="td-price">180 грн</td><td class="td-price">200 грн</td><td class="td-price">220 грн</td></tr>
+        <tr><td>Ремонт прокола (заплатка)</td><td class="td-price">280 грн</td><td class="td-price">300 грн</td><td class="td-price">320 грн</td></tr>
+        <tr><td>Ремонт боковины</td><td class="td-price">500 грн</td><td class="td-price">550 грн</td><td class="td-price">600 грн</td></tr>
+        <tr><td>Подкачка (1 шина)</td><td class="td-price">40 грн</td><td class="td-price">40 грн</td><td class="td-price">40 грн</td></tr>
+        <tr><td>Хранение (1 сезон)</td><td class="td-price">1 200 грн</td><td class="td-price">1 300 грн</td><td class="td-price">1 400 грн</td></tr>
+      </table>
+    </div>
+
+    <div id="price-gaz" class="price-content">
+      <table>
+        <tr><th>Услуга</th><th>Цена</th></tr>
+        <tr><td>Монтаж шины (1 шт)</td><td class="td-price">220 грн</td></tr>
+        <tr><td>Демонтаж шины (1 шт)</td><td class="td-price">180 грн</td></tr>
+        <tr><td>Балансировка (1 шт)</td><td class="td-price">220 грн</td></tr>
+        <tr><td>Замена 4 колёс (монтаж + баланс)</td><td class="td-price">1 760 грн</td></tr>
+        <tr><td>Ремонт прокола (жгут)</td><td class="td-price">200 грн</td></tr>
+        <tr><td>Ремонт прокола (заплатка)</td><td class="td-price">320 грн</td></tr>
+        <tr><td>Ремонт боковины</td><td class="td-price">600 грн</td></tr>
+        <tr><td>Подкачка (1 шина)</td><td class="td-price">40 грн</td></tr>
+        <tr><td>Хранение (1 сезон)</td><td class="td-price">1 400 грн</td></tr>
+      </table>
+    </div>
+
+    <div class="price-note">* Цены указаны за 1 колесо, если не указано иное. Окончательная стоимость уточняется на месте.</div>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="section-label">Онлайн запись</div>
+  <div class="section-title">ЗАПИШИТЕСЬ <span>СЕЙЧАС</span></div>
+  <div class="booking-wrap">
+    <div class="book-panel">
+      <h3>Ваши данные</h3>
+      <div class="form-group"><label>Имя</label><input type="text" id="b-name" placeholder="Иван Петров"></div>
+      <div class="form-group"><label>Телефон</label><input type="tel" id="b-phone" placeholder="+380 XX XXX XX XX"></div>
+      <div class="form-group"><label>Тип авто</label>
+        <select id="b-car">
+          <option>Легковой (R13–R21)</option>
+          <option>Джип / Кроссовер (R15–R21)</option>
+          <option>Микроавтобус (R15–R21)</option>
+          <option>Газель</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Услуга</label>
+        <select id="b-service">
+          <option>Замена колёс (4 шт)</option>
+          <option>Балансировка (4 шт)</option>
+          <option>Монтаж / Демонтаж</option>
+          <option>Ремонт прокола</option>
+          <option>Подкачка шин</option>
+          <option>Хранение шин</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Выбранное время</label>
+        <input type="text" id="b-time" placeholder="Выберите слот справа ➔" readonly style="cursor:pointer">
+      </div>
+      <button class="btn-book" onclick="bookSlot()">Записаться</button>
+      <div class="success-msg" id="success-msg">✓ Вы записаны! Мы позвоним для подтверждения.</div>
+    </div>
+    <div class="book-panel">
+      <h3>Выберите время</h3>
+      <div class="date-nav">
+        <button onclick="changeDay(-1)">&#8249;</button>
+        <span id="cur-date"></span>
+        <button onclick="changeDay(1)">&#8250;</button>
+      </div>
+      <div class="time-grid" id="time-grid"></div>
+      <div class="legend">
+        <div class="leg"><div class="leg-dot" style="background:#4caf50"></div>Свободно</div>
+        <div class="leg"><div class="leg-dot" style="background:#e94560"></div>Выбрано</div>
+        <div class="leg"><div class="leg-dot" style="background:#e57373;opacity:.6"></div>Занято</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="section-label">Мы здесь</div>
+  <div class="section-title">КОНТАКТЫ</div>
+  <div class="contacts-grid">
+    <div class="contact-card">
+      <div class="contact-icon">📞</div>
+      <h4>Телефон</h4>
+      <p><a href="tel:+380668845179">+380 66 884 51 79</a></p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">📍</div>
+      <h4>Адрес</h4>
+      <p>г. Днепр</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">🕗</div>
+      <h4>Режим работы</h4>
+      <p>Пн–Вс: 8:00–20:00</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">💬</div>
+      <h4>Viber / Telegram</h4>
+      <p><a href="tel:+380668845179">+380 66 884 51 79</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 <span>Шиномонтаж 404</span> · Днепр · Все права защищены</p>
+</footer>
+
+<script>
+function showPrice(tab,btn){
+  document.querySelectorAll('.price-content').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.price-tab').forEach(el=>el.classList.remove('active'));
+  document.getElementById('price-'+tab).classList.add('active');
+  btn.classList.add('active');
+}
+const days=['Вс','Пн','Вт','Ср','Чт','Пт','Сб'];
+const months=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+let currentOffset=0,selectedSlot=null;
+const busyByDay={0:['09:00','10:00','14:00'],1:['08:00','11:00','15:00','16:00'],2:['09:00','13:00'],3:['10:00','11:00','17:00'],4:['08:00','14:00']};
+const booked={};
+function renderSchedule(){
+  const d=new Date();d.setDate(d.getDate()+currentOffset);
+  const dk=currentOffset;
+  document.getElementById('cur-date').textContent=days[d.getDay()]+', '+d.getDate()+' '+months[d.getMonth()];
+  const busy=(busyByDay[((currentOffset%5)+5)%5]||[]).concat(booked[dk]||[]);
+  const grid=document.getElementById('time-grid');grid.innerHTML='';
+  for(let h=8;h<20;h++){
+    const t=h.toString().padStart(2,'0')+':00';
+    const div=document.createElement('div');
+    const isBusy=busy.includes(t);
+    const isSel=selectedSlot&&selectedSlot.day===dk&&selectedSlot.time===t;
+    div.className='time-slot '+(isBusy?'busy':isSel?'selected':'free');
+    div.textContent=t;
+    if(!isBusy){div.onclick=()=>{selectedSlot={day:dk,time:t,label:days[d.getDay()]+', '+d.getDate()+' '+months[d.getMonth()]+' в '+t};document.getElementById('b-time').value=selectedSlot.label;renderSchedule();};}
+    grid.appendChild(div);
+  }
+}
+function changeDay(dir){currentOffset+=dir;renderSchedule();}
+function bookSlot(){
+  const name=document.getElementById('b-name').value.trim();
+  const phone=document.getElementById('b-phone').value.trim();
+  if(!name||!phone){alert('Пожалуйста, заполните имя и телефон');return;}
+  if(!selectedSlot){alert('Выберите удобное время в расписании');return;}
+  if(!booked[selectedSlot.day])booked[selectedSlot.day]=[];
+  booked[selectedSlot.day].push(selectedSlot.time);
+  document.getElementById('success-msg').style.display='block';
+  document.getElementById('b-name').value='';
+  document.getElementById('b-phone').value='';
+  document.getElementById('b-time').value='';
+  selectedSlot=null;renderSchedule();
+  setTimeout(()=>{document.getElementById('success-msg').style.display='none';},5000);
+}
+renderSchedule();
+</script>
+</body>
+</html>
